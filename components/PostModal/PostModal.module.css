@@ -5,17 +5,17 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    padding-top: 15%;
+    /* padding-top: 15%; */
+
 }
 .modalContent{
     display: flex;
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    max-width: 800px;
-    /* height: 200px;   */
+    margin: 100px auto;
+    max-width: 900px;
+    height: 500px;  
     border-radius: 5px;
     background-color: white;
+    font-size: 16px;
 }
 .show{
     display: block;
@@ -24,15 +24,10 @@
 .hide{
     display: none;
 }
-.closeBtn{
-    position: absolute;
-    left: 8px;
-    top: 5px;
-    font-size: 26px;
-}
 .imgContainer{
-    width: 200px;
-    height: 200px;
+    width: 50%;
+    height: 100%;
+    background-color: black;
     /* margin: 20px; */
 }
 .imgContainer img{
@@ -40,5 +35,162 @@
     height: 100%;
 }
 .modalInfo{
+    margin-top: 10px;
     margin-left: 20px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto; */
+}
+.modalInfo {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.modalHeader{
+    width: 95%;
+    height: 20%;
+    border-bottom: 1px solid #cccccc;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    /* margin-top: 15px; */
+    height: 60%;
+    overflow-y: scroll;
+    /* scrollbar-width: none; */
+}
+.comments span{
+    margin-top: 20px;
+}
+.comments::-webkit-scrollbar {
+    display: none;
+}
+.comment{
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 25px;
+}
+.commentImg{
+    width: 50px;
+    margin-right: 15px;
+}
+.commentImg img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.commentMsg{
+    width: 75%;
+}
+.addComment{
+    width: 95%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.addComment input{
+    width: 90%;
+    height: 35%;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+.addComment button{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer ;
+}
+.closeBtn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 26px;
+    color: white;
+}
+
+/* media queries */
+
+/* @media screen and {
+    
+} */
+@media screen and (min-width:771px) and (max-width:925px) {
+    .modalContent{
+        max-width: 95%;  
+    }
+}
+@media screen and (min-width:693px) and (max-width:770px) {
+    .modalContent{
+        max-width: 95%;
+    }
+    .imgContainer{
+        width: 40%;
+        vertical-align: middle;
+        position: relative;
+    }
+    .imgContainer img{
+        position: absolute;
+        height: 70%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .modalInfo{
+        width: 55%;
+    }
+   
+}
+@media screen and (max-width:692px){
+    .modalContent{
+        max-width: 400px;
+        width: 95%;
+        height: 500px;
+        margin: 50px auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    .imgContainer{
+        width: 100%;
+        height: 40%;
+        text-align: center;
+    }
+    .imgContainer img{
+        width: 50%;
+    }
+    .modalInfo{
+        width: 100%;
+        height: 56%;
+        margin-bottom: 10px;
+    }
+    .modalHeader{
+        height: 25%;
+    }
+    .comments{
+        width: 90%;
+        height: 65%;
+    }
+    .addComment{
+        height: 10%;
+    }
+    .addComment input{
+        height: 100%;
+    }
 }
